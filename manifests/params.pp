@@ -1,4 +1,4 @@
-class params {
+class gradle::params {
   $url = 'https://services.gradle.org/distributions'
   $version = '1.12'
   $flavour = 'bin'
