@@ -12,7 +12,7 @@ class gradle (
   $gradle_path = "${path}/gradle-${version}"
 
   archive { $filename:
-    path         => $path,
+    path         => "${path}/${filename}",
     source       => "${url}/${filename}",
     extract      => true,
     extract_path => $path,
