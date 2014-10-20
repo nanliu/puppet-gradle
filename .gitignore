@@ -1,6 +1,9 @@
 .bundle
+.idea
 .pkg
 .ruby-version
 .vagrant
 Gemfile.lock
 spec/fixtures
+*.swp
+tests/**/data.pp
