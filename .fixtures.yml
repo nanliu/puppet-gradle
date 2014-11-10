@@ -5,5 +5,9 @@ fixtures:
       ref: '4.2.2'
     pe_gem: 'https://github.com/puppetlabs/puppetlabs-pe_gem.git'
     helper: 'https://github.com/bodeco/bodeco_module_helper.git'
+    archive:
+      repo: 'https://github.com/nanliu/puppet-archive.git'
+      ref: 0.1.6
+    java: 'https://github.com/bodeco/puppet-java.git'
   symlinks:
-    archive: "#{source_dir}"
+    gradle: "#{source_dir}"
