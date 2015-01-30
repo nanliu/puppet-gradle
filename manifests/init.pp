@@ -7,6 +7,7 @@ class gradle (
 ) inherits gradle::params {
 
   validate_re($flavour, ['^all$', '^bin$', '^src$'])
+  validate_string($path)
 
   $filename = "gradle-${version}-${flavour}.zip"
   $gradle_path = "${path}/gradle-${version}"
@@ -30,10 +31,11 @@ class gradle (
     }
 
     'Windows': {
-      exec { 'ensure gradle in path':
-        command  => "[Environment]::SetEnvironmentVariable('Path', \$env:Path + '${gradle_path}\\bin;', [EnvironmentVariableTarget]::Machine)",
-        unless   => "\$(\$env:Path).ToLower().Contains(\$('${gradle_path}\\bin').ToLower())",
-        provider => 'powershell',
+      windows_env{'gradle_path':
+        ensure => present,
+        variable => 'Path',
+        value    => "${gradle_path}/bin",
+        require  =>  Archive[$filename],
       }
     }
   }

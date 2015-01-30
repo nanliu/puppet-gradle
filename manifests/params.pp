@@ -1,6 +1,6 @@
 class gradle::params {
   $url = 'https://services.gradle.org/distributions'
-  $version = '1.12'
+  $version = '2.2.1'
   $flavour = 'bin'
 
   case $::osfamily {
@@ -10,7 +10,7 @@ class gradle::params {
     }
     'Windows': {
       $path = 'C:/'
-      $target = 'C:\\gradle'
+      $target = 'C:/gradle'
     }
   }
 }
