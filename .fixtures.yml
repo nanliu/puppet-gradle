@@ -7,7 +7,13 @@ fixtures:
     helper: 'https://github.com/bodeco/bodeco_module_helper.git'
     archive:
       repo: 'https://github.com/nanliu/puppet-archive.git'
-      ref: 0.1.6
+      ref: 0.1.7
     java: 'https://github.com/bodeco/puppet-java.git'
+    windows_env:
+      repo: https://github.com/badgerious/puppet-windows-env.git
+      ref: 'v2.2.1'
+    chocolatey:
+      repo: https://github.com/rismoney/puppet-chocolatey.git
+      ref: '0.4'
   symlinks:
     gradle: "#{source_dir}"
